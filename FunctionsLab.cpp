@@ -12,9 +12,9 @@ using namespace std; // making life easier so that we do not need to use std::ci
 
 int locateSmallest(int array[], int start, int end){
 	int numberSmall = array[start]; 
-	for (int i= start; i <= end; i++) { 
-      if (array[i] < numberSmall) { 
-		numberSmall = array[i]; 
+	for (int i = start; i <= end; i++) { 
+      if (array[i] < array[numberSmall]) { 
+		numberSmall = i; 
 	  }
 	 
 	}  
@@ -27,7 +27,7 @@ int locateSmallest(int array[], int start, int end){
 //     an int which is the starting index of search,
 //     an int which is the ending point of searchspace
 // function: Search in the array from given start to end index and replace the given target value with 1000
-void replaceVariable(int array[], int start, int end,int targetVal) {
+void replaceVariable(int array[],int targetVal, int start, int end) {
     for (int i = start; i <= end; i++) { 
        if (array[i] == targetVal) { 
          array[i] = 1000; 
